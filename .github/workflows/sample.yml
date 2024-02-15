@@ -1,0 +1,54 @@
+name: Sample GHA Workflow for PPC 
+
+on: [ workflow_dispatch, push ]
+
+jobs:
+  amd_job:
+    name: AMD Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run commands
+        run: |
+          uname -a
+          arch
+          # ping -c3 2606:4700::6810:1023
+          groups
+          id
+          whoami
+          
+          
+          
+  power_job:
+    name: Power Job
+    runs-on: ubuntu-22.04-ppc64le
+    steps:
+      - name: Run commands
+        run: |
+          uname -a
+          arch
+          groups
+          id
+          whoami
+          
+  
+  # power_job-2:
+  #   name: Power Job-2
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Run commands
+  #       run: |
+  #         uname -a
+  #         arch
+  #         ping -c3 2606:4700::6810:1023
+          
+  # power_job-3:
+  #   name: Power Job-3
+  #   runs-on: ubuntu-20.04-ppc64le
+  #   steps:
+  #     - name: Run commands
+  #       run: |
+  #         uname -a
+  #         arch
+  #         ping -c3 2606:4700::6810:1023
+          
+  
